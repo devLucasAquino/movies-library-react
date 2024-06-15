@@ -13,18 +13,20 @@ const Home = () => {
         const res = await fetch(url);
         const data = await res.json();
 
-        console.log(data)
+        setTopMovies(data.results);
     }
 
     useEffect(() => {
         const topRatedUrl = `${moviesURL}top_rated?${apiKey}`;
 
-        console.log(topRatedUrl);
+        getTopRatedMovies(topRatedUrl);
         
     }, [])
 
     return(
-        <h2>Home</h2>
+        <div>
+            {topMovies && topMovies.map((movie) =>  <p>{movie.title}</p> )}
+        </div>
     )
 }
 
