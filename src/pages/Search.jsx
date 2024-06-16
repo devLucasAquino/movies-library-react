@@ -28,7 +28,7 @@ const Search = () => {
 
         getSearchedMovies(searchWithQueryURL);
         
-    }, []);
+    }, [query]);
 
 
     return(
